@@ -2,7 +2,8 @@
 # Args - arguments,passes single variable, Kwargs - Keyward argument, passes key and value
 
 import os
-os.getcwd()
+path = os.getcwd()
+print(path)
 def ArgsKwargs(*args,**kwargs):
     print(args,kwargs)
 
@@ -19,5 +20,8 @@ ArgsKwargs(best_students,grade_scores_details)
 # prints out args in args position, and kwargs in kwargs position
 print("\nprints out args in args(list) positions and kwargs(dictionary in kwargs position\n")
 ArgsKwargs(*best_students,**grade_scores_details)
+with open("beststudents.txt","w") as fo:
+    bestst = fo.write(str(best_students))
 
-
+with open("students_grade.txt","w") as fg:
+    grades = fg.write(str(grade_scores_details))
